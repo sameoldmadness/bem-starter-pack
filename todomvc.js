@@ -77,7 +77,6 @@ BEM.DOM.decl('search', {
     onSetMod : {
         js : {
             inited : function() {
-                var that = this;
                 var input = this.findBlockInside('input');
                 var button = this.findBlockInside('button');
 
@@ -86,10 +85,10 @@ BEM.DOM.decl('search', {
                 });
 
                 button.on('click', function() {
-                    that.emit('submit', {
+                    this.emit('submit', {
                         query: input.getVal()
                     });
-                });
+                }, this);
             }
         }
     }
