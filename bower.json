@@ -1,0 +1,6 @@
+{
+  "name": "trivial-bem",
+  "dependencies": {
+    "bem-components-dist": "https://github.com/bem/bem-components-dist.git#v2"
+  }
+}

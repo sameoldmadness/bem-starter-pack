@@ -1,9 +1,17 @@
-.todomvc {
-    color: red;
+html, body {
+	margin: 0;
+	padding: 0;
 }
 
 .header {
+	background-color: #ffdb4d;
+	padding: .5em 1em;
 }
 
-.footer {
+.search {
+	margin: 1em 0;
+}
+
+.search > .button {
+	margin-left: 1em;
 }
