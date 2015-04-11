@@ -1,0 +1,4 @@
+{
+    "plugins": ["jscs-bem"],
+    "preset": "bem"
+}

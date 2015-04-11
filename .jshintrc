@@ -1,0 +1,20 @@
+ {
+    "expr" : true,
+    "eqeqeq" : true,
+    "undef" : true,
+    "boss" : true,
+    "sub" : true,
+    "supernew" : true,
+    "loopfunc" : true,
+    "onecase" : true,
+    "quotmark" : "single",
+
+    "browser": true,
+    "jquery": true,
+    "node": true,
+
+    "predef": [
+        "modules",
+        "BEM"
+    ]
+}
