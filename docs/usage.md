@@ -1,28 +1,16 @@
-## Что это и зачем?
+# Usage
 
-Шаблон для быстрого старта на БЭМ-стеке.
+Once you have cloned or downloaded blinkered-bem, you've got a nice setup that allows you to create blocks — independent components of your application.
 
-Минимум технологий, но расширяемый.
+A rich library of builin blocks is also avaliable.
 
-Подходит для 
+Let's start with using standard blocks in our application.
 
-* ознакомления с БЭМ
-* быстрого прототипирования
-* небольших проектов
+## Standard blocks library
 
-Позволяет создавать БЭМ-блоки, состоящие из
+### Attaching standard block on a page
 
-* шаблона (html)
-* стилей (css)
-* поведения (js)
-
-Предлагается использовать библиотеку готовых блоков, а также создавать собственные блоки.
-
-## Библиотека блоков
-
-### Вставка блока на страницу
-
-В проекте подключена библиотека готовых блоков [bem-components][bem-components]. Доступны такие блоки, как button, input, textarea, а также [многие другие][bem-components blocks].
+This project includes [bem-components][bem-components] library, that provides a lot of blocks such as button, input, textarea, and [many more][bem-components blocks].
 
 ```js
 BEM.DOM.append('body', BEM.HTML.apply({
@@ -31,9 +19,9 @@ BEM.DOM.append('body', BEM.HTML.apply({
 }));
 ```
 
-Разберём подробно этот пример.
+Let's see what's going on here.
 
-Любой блок может быть описан в виде json-объекта:
+Every block can be described with a JSON object:
 
 ```js
 var buttonJson = {
@@ -42,31 +30,31 @@ var buttonJson = {
 };
 ```
 
-В объекте указывается название блока и перечисляются его модификаторы. Этот формат назвается [bemjson][bemjson].
+The only required field is `block` — a block's name.
 
-Чтобы преобразовать этот объект в html-код, используется метод BEM.HTML.apply:
+You can read more about this format in [bemjson][bemjson] documentation.
+
+After defining an object, we should use BEM.HTML.apply to compile it to HTML:
 
 ```js
 var buttonHTML = BEM.HTML.apply(buttonJSON);
 ```
 
-За преобразование `bemjson` в `html` отвечает шаблонизатор [BH][BH].
+[BH][BH] template engine is in charge of the compilation `bemjson` to `html`.
 
-Для вставки полученного `html` в документ используется ещё один вспомогательный метод — BEM.DOM.append:
+Then we can leverage BEM.DOM.append method to attach HTML into the page:
 
 ```js
 var button = BEM.DOM.append('body', buttonHTML);
 ```
 
-Подробнее про этот метод можно прочитать в документации [i-bem][i-bem].
+Further documentation on BEM.DOM can be found [here][i-bem].
 
-Использование специального метода для вставки блока обусловлено тем, что, кроме непосредственно вставки html-кода, также происходит инициализация js-представления блока.
+### Block customization
 
-### Настройка блока
+Block can be customised via modifications.
 
-Настройка блока происходит путём установки его модификаторов.
-
-Продолжая пример с кнопкой, настроим её внешний вид и зададим текст:
+i.e. we could change a buttons's theme by adding to modificators: theme and size.
 
 ```js
 var json = {
@@ -79,11 +67,11 @@ var json = {
 }
 ```
 
-Все доступные модификаторы перечислены [на странце блока][bem-components button].
+All avaliable modificators are listed on a [block's page][bem-components button].
 
 ### Взаимодействие с блоком
 
-Существует два способа взаимодействия с блоком: подписка на события и изменение модификаторов:
+Block can be managed either with events or with direct modification change:
 
 ```js
 button.on('click', function () {
@@ -93,11 +81,9 @@ button.on('click', function () {
 });
 ```
 
-Для вставки используется специальный метод: он не только вставляет код в шаблон, но и инициализирует js-представление кнопки. так, при нажатии на кнопку будет вызвано BEM-событие click. Про разницу между dom-событиями и bem-событиями можно почитать [тут][i-bem events].
+## Creating custom block
 
-## Как создать собственный компонент TODO
-
-Задаём разметку блока:
+Creating template:
 
 ```js
 BEM.HTML.match('paragraph', function (ctx) {
@@ -118,7 +104,7 @@ BEM.HTML.match('paragraph', function (ctx) {
 });
 ```
 
-Задаём поведение блока:
+Defining behavior:
 
 ```js
 BEM.DOM.decl('paragraph', {
@@ -136,11 +122,7 @@ BEM.DOM.decl('paragraph', {
 });
 ```
 
-Интерфейс блока формируется из событий и модификаторов
-
-Задаём внешний вид блока.
-
-Просто создаём стили с учётом bem naming convention (link)
+Setting up styles:
 
 ```css
 .paragraph {
