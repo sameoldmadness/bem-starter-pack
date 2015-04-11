@@ -1,169 +1,50 @@
-# trivial-bem
+# Trivial BEM
 
-BEM for stupid people.
+<!-- TODO link to gh-pages -->
 
-## Что это и зачем?
+<!-- TODO bages -->>
 
-Шаблон для быстрого старта на БЭМ-стеке.
+Trivial BEM is a front-end template for rapid development on BEM stack.
 
-Минимум технологий, но расширяемый.
+<!-- TODO link to source, homepage -->
 
-Подходит для 
+## Quick start
 
-* ознакомления с БЭМ
-* быстрого прототипирования
-* небольших проектов
+Choose one of the following options:
 
-Позволяет создавать БЭМ-блоки, состоящие из
+<!-- TODO add link to archive on gh-pages -->
 
-* шаблона (html)
-* стилей (css)
-* поведения (js)
-
-Предлагается использовать библиотеку готовых блоков, а также создавать собственные блоки.
-
-## Библиотека блоков
-
-### Вставка блока на страницу
-
-В проекте подключена библиотека готовых блоков [bem-components][bem-components]. Доступны такие блоки, как button, input, textarea, а также [многие другие][bem-components blocks].
-
-```js
-BEM.DOM.append('body', BEM.HTML.apply({
-    block: 'button',
-    content: 'Submit'
-}));
-```
-
-Разберём подробно этот пример.
-
-Любой блок может быть описан в виде json-объекта:
-
-```js
-var buttonJson = {
-    block: 'button',
-    content: 'Submit'
-};
-```
-
-В объекте указывается название блока и перечисляются его модификаторы. Этот формат назвается [bemjson][bemjson].
-
-Чтобы преобразовать этот объект в html-код, используется метод BEM.HTML.apply:
-
-```js
-var buttonHTML = BEM.HTML.apply(buttonJSON);
-```
-
-За преобразование `bemjson` в `html` отвечает шаблонизатор [BH][BH].
-
-Для вставки полученного `html` в документ используется ещё один вспомогательный метод — BEM.DOM.append:
-
-```js
-var button = BEM.DOM.append('body', buttonHTML);
-```
-
-Подробнее про этот метод можно прочитать в документации [i-bem][i-bem].
-
-Использование специального метода для вставки блока обусловлено тем, что, кроме непосредственно вставки html-кода, также происходит инициализация js-представления блока.
-
-### Настройка блока
-
-Настройка блока происходит путём установки его модификаторов.
-
-Продолжая пример с кнопкой, настроим её внешний вид и зададим текст:
-
-```js
-var json = {
-    block: 'button',
-    mods: {
-        theme: 'islands',
-        size: 'm'
-    },
-    content: 'Нажми меня'    
-}
-```
-
-Все доступные модификаторы перечислены [на странце блока][bem-components button].
-
-### Взаимодействие с блоком
-
-Существует два способа взаимодействия с блоком: подписка на события и изменение модификаторов:
-
-```js
-button.on('click', function () {
-    console.log('кнопка был нажата');
-
-    button.setMod('disabled');
-});
-```
-
-Для вставки используется специальный метод: он не только вставляет код в шаблон, но и инициализирует js-представление кнопки. так, при нажатии на кнопку будет вызвано BEM-событие click. Про разницу между dom-событиями и bem-событиями можно почитать [тут][i-bem events].
-
-## Как создать собственный компонент TODO
-
-Задаём разметку блока:
-
-```js
-BEM.HTML.match('paragraph', function (ctx) {
-    // указываем тэг блока
-    ctx.tag('p');
-
-    // задаём содержимое
-    ctx.content([
-        { 
-            elem: 'foo',
-            content: 'test'
-        },
-        {
-            elem: 'bar',
-            content: 'test'
-        }
-    ]);
-});
-```
-
-Задаём поведение блока:
-
-```js
-BEM.DOM.decl('paragraph', {
-    onSetMod: {
-        js: {
-            inited: function () {
-                // constructor
-            }
-        },
-
-        expanded: function () {
-            this.trigger('ho-ho-ho');
-        }
-    },
-});
-```
-
-Интерфейс блока формируется из событий и модификаторов
-
-Задаём внешний вид блока.
-
-Просто создаём стили с учётом bem naming convention (link)
-
-```css
-.paragraph {
-    color: red;
-}
-```
+1. [Download](https://github.com/veged/trivial-bem/archive/master.zip) the latest stable release.
+2. Clone the git repo — `git clone
+   https://github.com/veged/trivial-bem.git` - and checkout the [tagged
+   release](https://github.com/veged/trivial-bem/releases) you'd like to
+   use.
 
 
-<!-- Links -->
+## Features
 
-[bem-core]: https://ru.bem.info/libs/bem-core/v2.6.0/
-[bem-components]: https://ru.bem.info/libs/bem-components/v2.1.0/
-[bem-components blocks]: https://ru.bem.info/libs/bem-components/v2.1.0/#Блоки
-[bem-components button]: https://ru.bem.info/libs/bem-components/v2.1.0/desktop/button/
+* Powerfull js library for managing BEM blocks — [bem-components](https://ru.bem.info/libs/bem-components/)
+* Rich and fast BEM template engine — [BH](https://ru.bem.info/technology/bh)
+* Comprehensible "Gettting started" guide
 
-[bemjson]: https://ru.bem.info/technology/bemjson/v2/bemjson/
-[bem-components-dist]: https://github.com/bem/bem-components-dist
-[i-bem]: https://ru.bem.info/technology/i-bem/v2/i-bem-js/
-[i-bem events]: https://ru.bem.info/technology/i-bem/v2/i-bem-js/#%D0%94%D0%B5%D0%BB%D0%B5%D0%B3%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9
-[bh]: https://ru.bem.info/technology/bh/v4/about/
-[getbem]: http://getbem.com/
-[pen]: http://codepen.io/sameoldmadness/pen/vEqeVB?editors=001
+
+## [Browser support](https://github.com/bem/bem-core#supported-browsers)
+
+* Google Chrome 29+
+* Firefox 24+
+* Yandex 1.7+
+* MSIE 8.0+
+* Opera 12.15+
+
+
+## Documentation
+
+Take a look at the [documentation table of contents](dist/doc/TOC.md). This
+documentation is bundled with the project, which makes it readily available for
+offline reading and provides a useful starting point for any documentation you
+want to write about your project.
+
+
+## License
+
+The code is available under the [Mozilla Public License 2.0](LICENSE.txt).
