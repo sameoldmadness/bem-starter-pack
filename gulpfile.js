@@ -18,25 +18,10 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('copy', [
-    'copy:index.html',
-    'copy:jquery',
     'copy:bem-components',
     'copy:license',
-    // 'copy:main.css',
     'copy:misc'
 ]);
-
-gulp.task('copy:index.html', function () {
-    return gulp.src('src/index.html')
-               .pipe(plugins.replace(/{{JQUERY_VERSION}}/g, pkg.devDependencies.jquery))
-               .pipe(gulp.dest('dist'));
-});
-
-gulp.task('copy:jquery', function () {
-    return gulp.src('node_modules/jquery/dist/jquery.min.js')
-               .pipe(plugins.rename('jquery-' + pkg.devDependencies.jquery + '.min.js'))
-               .pipe(gulp.dest('dist/vendor/jquery'));
-});
 
 gulp.task('copy:bem-components', function () {
     return gulp.src([
@@ -53,21 +38,8 @@ gulp.task('copy:license', function () {
 });
 
 gulp.task('copy:misc', function () {
-    return gulp.src([
-
-        // Copy all files
-        'src/**/*',
-
-        // Exclude the following files
-        // (other tasks will handle the copying of these files)
-        '!src/index.html'
-
-    ], {
-
-        // Include hidden files by default
-        dot : true
-
-    }).pipe(gulp.dest('dist'));
+    return gulp.src(['src/**/*'], { dot : true })
+               .pipe(gulp.dest('dist'));
 });
 
 gulp.task('lint:js', function () {
