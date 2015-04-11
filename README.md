@@ -2,7 +2,7 @@
 
 <!-- TODO link to gh-pages -->
 
-<!-- TODO bages -->>
+<!-- TODO bages -->
 
 Trivial BEM is a front-end template for rapid development on BEM stack.
 
@@ -39,7 +39,7 @@ Choose one of the following options:
 
 ## Documentation
 
-Take a look at the [documentation table of contents](dist/doc/TOC.md). This
+Take a look at the [documentation table of contents](doc/TOC.md). This
 documentation is bundled with the project, which makes it readily available for
 offline reading and provides a useful starting point for any documentation you
 want to write about your project.
