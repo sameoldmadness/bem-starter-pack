@@ -1,10 +1,10 @@
-# Trivial BEM
+# blinkered-bem
 
 <!-- TODO link to gh-pages -->
 
 <!-- TODO bages -->
 
-Trivial BEM is a front-end template for rapid development on BEM stack.
+blinkered-bem is a front-end template for rapid development on BEM stack.
 
 <!-- TODO link to source, homepage -->
 
@@ -14,10 +14,10 @@ Choose one of the following options:
 
 <!-- TODO add link to archive on gh-pages -->
 
-1. [Download](https://github.com/veged/trivial-bem/archive/master.zip) the latest stable release.
+1. [Download](https://github.com/veged/blinkered-bem/archive/master.zip) the latest stable release.
 2. Clone the git repo — `git clone
-   https://github.com/veged/trivial-bem.git` - and checkout the [tagged
-   release](https://github.com/veged/trivial-bem/releases) you'd like to
+   https://github.com/veged/blinkered-bem.git` - and checkout the [tagged
+   release](https://github.com/veged/blinkered-bem/releases) you'd like to
    use.
 
 

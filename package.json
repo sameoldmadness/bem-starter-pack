@@ -25,9 +25,9 @@
   "homepage": "",
   "license": {
     "type": "Mozilla Public License 2.0",
-    "url": "https://github.com/veged/trivial-bem/blob/master/LICENSE.txt"
+    "url": "https://github.com/veged/blinkered-bem/blob/master/LICENSE.txt"
   },
-  "name": "trivial-bem",
+  "name": "blinkered-bem",
   "private": true,
   "scripts": {
     "build": "gulp build",

@@ -5,7 +5,7 @@
 * [Usage](usage.md) — Overview of the project contents.
 * [FAQ](faq.md) — Frequently asked questions along with their answers.
 
-## Trivial BEM core
+## blinkered-bem core
 
 * [HTML](html.md) — Guide to the default HTML.
 * [CSS](css.md) — Guide to the default CSS.

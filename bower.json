@@ -1,5 +1,5 @@
 {
-  "name": "trivial-bem",
+  "name": "blinkered-bem",
   "dependencies": {
     "bem-components-dist": "https://github.com/bem/bem-components-dist.git#v2"
   }
