@@ -1,0 +1,98 @@
+.section
+{
+  background-color: #ffdb4d;
+  text-align: center;
+  overflow: auto;
+}
+
+.section_type_secondary
+{
+  background-color: transparent;
+}
+
+.section_codepen_after
+{
+  margin-top: -3px;
+}
+
+.section__title {
+  font-size: 2.5em;
+  margin: 1.5em 0 1em;
+}
+
+.section__postscriptum {
+  font-size: 2em;
+  margin: 3em 0 1em;
+}
+
+.header
+{
+  margin: 60px 0;
+}
+
+.header__title
+{
+  margin: 2em 0 1em;
+  font-size: 3em;
+  color: hsl(48, 100%, 90%);
+}
+
+.header__subtitle
+{
+  margin: 2em 0 1em;
+  font-size: 2em;
+  color: hsl(48, 100%, 25%);
+}
+
+.steps {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0;
+}
+
+.steps__step {
+  display: inline;
+}
+
+.steps__step + .steps__step:before {
+  content: '→';
+  margin: 0 .5em;
+  font-size: 2em;
+  vertical-align: top;
+  line-height: 0.8;
+}
+
+.components {
+    display: table;
+    width: 100%;
+}
+
+.components__item {
+    display: table-cell;
+    width: 33.333333%;
+}
+
+.components__title {
+    font-size: 1.6em;
+    margin-bottom: 1em;
+}
+
+.components__code {
+    font-family: monospace;
+    text-align: left;
+    background: black;
+    color: white;
+    margin: 1em;
+    padding: 0.5em 1em;
+}
+
+.components__preview {
+    background: white;
+    text-align: left;
+    margin: 1em;
+    padding: 1.5em;
+}
+
+.components__example + .components__example {
+    margin-top: 1em;
+}
