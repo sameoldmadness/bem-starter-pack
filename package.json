@@ -25,9 +25,9 @@
   "homepage": "",
   "license": {
     "type": "Mozilla Public License 2.0",
-    "url": "https://github.com/veged/blinkered-bem/blob/master/LICENSE.txt"
+    "url": "https://github.com/veged/bem-starter-pack/blob/master/LICENSE.txt"
   },
-  "name": "blinkered-bem",
+  "name": "bem-starter-pack",
   "private": true,
   "scripts": {
     "build": "gulp build",

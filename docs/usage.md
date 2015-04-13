@@ -1,6 +1,6 @@
 # Usage
 
-Once you have cloned or downloaded blinkered-bem, you've got a nice setup that allows you to create blocks — independent components of your application.
+Once you have cloned or downloaded bem-starter-pack, you've got a nice setup that allows you to create blocks — independent components of your application.
 
 A rich library of builin blocks is also avaliable.
 

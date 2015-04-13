@@ -1,5 +1,5 @@
 {
-  "name": "blinkered-bem",
+  "name": "bem-starter-pack",
   "dependencies": {
     "bem-components-dist": "https://github.com/bem/bem-components-dist.git#v2"
   }
