@@ -202,7 +202,7 @@ BEM.DOM.append('body', BEM.HTML.apply([
   },
   {
     block: 'section',
-    mods: { type: 'secondary', codepen: 'after' },
+    mods: { codepen: 'after' },
     content: [
       {
         elem: 'title',
@@ -215,6 +215,7 @@ BEM.DOM.append('body', BEM.HTML.apply([
   },
   {
     block: 'section',
+    mods: { type: 'secondary' },
     content: [
       {
         elem: 'title',
