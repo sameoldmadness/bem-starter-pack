@@ -57,7 +57,7 @@ BEM.DOM.append('body', BEM.HTML.apply([
               type: 'link',
               view: 'action'
             },
-            url: 'https://github.com/sameoldmadness/blinkered-bem/archive/master.zip',
+            url: 'https://github.com/sameoldmadness/bem-starter-pack/releases/download/1.0.0/bem-starter-pack_v1.0.0.zip',
             text: 'Скачать архив'
           },
           'Распаковать',
