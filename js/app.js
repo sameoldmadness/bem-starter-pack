@@ -138,6 +138,32 @@ BEM.DOM.append('body', BEM.HTML.apply([
     content: [
       {
         elem: 'title',
+        content: 'А что такое БЭМ?'
+      },
+      {
+        elem: 'description',
+        content: 'БЭМ — методология разработки, а также набор инструментов, упрощающий эту самую разработку.'
+      },
+      {
+        elem: 'description',
+        content: [
+          'Для начала будет полезно узнать, ',
+          { block: 'link', mods: { theme: 'islands' }, content: 'что', url: 'https://ru.bem.info/method/definitions/' },
+          ' такое БЭМ и ',
+          { block: 'link', mods: { theme: 'islands' }, content: 'зачем', url: 'https://ru.bem.info/method/' },
+          ' он нужен.<br>А затем — сразу к ',
+          { block: 'link', mods: { theme: 'islands' }, content: 'туториалу', url: 'https://github.com/sameoldmadness/bem-starter-pack/blob/master/docs/tutorial.md' },
+          ', создавать свой собственный блок.'
+        ]
+      },
+    ]
+  },
+  {
+    block: 'section',
+    mods: { type: 'secondary' },
+    content: [
+      {
+        elem: 'title',
         content: 'Как начать?'
       },
       {
@@ -176,7 +202,7 @@ BEM.DOM.append('body', BEM.HTML.apply([
   },
   {
     block: 'section',
-    mods: { codepen: 'after' },
+    mods: { type: 'secondary', codepen: 'after' },
     content: [
       {
         elem: 'title',
@@ -184,6 +210,43 @@ BEM.DOM.append('body', BEM.HTML.apply([
       },
       {
         block: 'technologies'
+      }
+    ]
+  },
+  {
+    block: 'section',
+    content: [
+      {
+        elem: 'title',
+        content: 'И что же дальше?'
+      },
+      {
+        elem: 'description',
+        content: [
+          'Тем, кто хочет стать настоящим БЕМ-ниндзей, стоит изучить ',
+          { block: 'link', mods: { theme: 'islands' }, content: 'шаблонизатор', url: 'https://ru.bem.info/technology/bh/v4/about/' },
+          ', ',
+          { block: 'link', mods: { theme: 'islands' }, content: 'js-библиотеку', url: 'https://ru.bem.info/technology/i-bem/v2/i-bem-js/' },
+          ' и <br>',
+          { block: 'link', mods: { theme: 'islands' }, content: 'библиотеку блоков', url: 'https://ru.bem.info/libs/bem-components/v2.1.0/' },
+          '. Затем можно посмотреть на ',
+          { block: 'link', mods: { theme: 'islands' }, content: 'систему сборки', url: 'https://ru.bem.info/tools/bem/enb-bem-examples/' },
+          ' и ',
+          { block: 'link', mods: { theme: 'islands' }, content: 'загрузчик модулей', url: 'https://ru.bem.info/tools/bem/modules/' },
+          '.'
+        ]
+      },
+      {
+        elem: 'description',
+        content: [
+          'Если же первоочередная задача — развернуть приложение на БЭМ-стеке,<br>вот вам ',
+          { block: 'link', mods: { theme: 'islands' }, content: 'репозиторий', url: 'https://github.com/bem/project-stub' },
+          ' и ',
+          { block: 'link', mods: { theme: 'islands' }, content: 'статья', url: 'https://ru.bem.info/tutorials/project-stub/' },
+          ' про него. Даже ',
+          { block: 'link', mods: { theme: 'islands' }, content: 'yeoman-генератор', url: 'https://ru.bem.info/tools/bem/bem-stub/' },
+          ' есть : )'
+        ]
       }
     ]
   }
