@@ -1,3 +1,8 @@
+.page
+{
+  min-width: 1020px;
+}
+
 .section
 {
   background-color: #ffdb4d;
@@ -62,22 +67,22 @@
   line-height: 0.8;
 }
 
-.components {
+.technologies {
     display: table;
     width: 100%;
 }
 
-.components__item {
+.technologies__item {
     display: table-cell;
     width: 33.333333%;
 }
 
-.components__title {
+.technologies__title {
     font-size: 1.6em;
     margin-bottom: 1em;
 }
 
-.components__code {
+.technologies__code {
     font-family: monospace;
     text-align: left;
     background: black;
@@ -86,13 +91,13 @@
     padding: 0.5em 1em;
 }
 
-.components__preview {
+.technologies__preview {
     background: white;
     text-align: left;
     margin: 1em;
     padding: 1.5em;
 }
 
-.components__example + .components__example {
+.technologies__example + .technologies__example {
     margin-top: 1em;
 }
