@@ -77,9 +77,8 @@
     width: 33.333333%;
 }
 
-.technologies__title {
-    font-size: 1.6em;
-    margin-bottom: 1em;
+.technologies__link {
+  color: #806600;
 }
 
 .technologies__code {

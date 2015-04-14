@@ -31,7 +31,8 @@ BEM.HTML.match('technologies', function (ctx) {
     ctx.content([
       {
         elem: 'item',
-        title: 'фреймворк',
+        title: 'js-библиотека i-bem',
+        url: 'https://ru.bem.info/technology/i-bem/v2/i-bem-js/',
         code:
           'BEM.DOM.decl(\'form\', {\n' +
           '  onSetMod: {\n' +
@@ -44,7 +45,8 @@ BEM.HTML.match('technologies', function (ctx) {
       },
       {
         elem: 'item',
-        title: 'шаблонизатор',
+        title: 'шаблонизатор bh',
+        url: 'https://ru.bem.info/technology/bh/v4/about/',
         code:
           'bh.match(\'button\', function(ctx) {\n' +
           '  ctx.tag(\'button\')\n' +
@@ -55,7 +57,8 @@ BEM.HTML.match('technologies', function (ctx) {
       },
       {
         elem: 'item',
-        title: 'библиотека блоков',
+        title: 'библиотека блоков o2',
+        url: 'https://ru.bem.info/libs/bem-components/v2.1.0/',
         examples: [
           {
             block : 'checkbox-group',
@@ -95,7 +98,14 @@ BEM.HTML.match('technologies__item', function (ctx) {
   var examples = ctx.param('examples');
 
   ctx.content([
-    { elem: 'title', content: ctx.param('title') },
+    {
+      block: 'link',
+      mix: { block: 'technologies', elem: 'link' },
+      mods: { theme: 'islands', size: 'xl' },
+      url: ctx.param('url'),
+      content: ctx.param('title'),
+      target: '_blank'
+    },
     code && { elem: 'code', content: code },
     examples && { elem: 'preview', examples: examples }
   ]);
