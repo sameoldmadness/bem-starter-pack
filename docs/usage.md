@@ -69,7 +69,7 @@ var json = {
 
 All avaliable modificators are listed on a [block's page][bem-components button].
 
-### Взаимодействие с блоком
+### Block interaction
 
 Block can be managed either with events or with direct modification change:
 

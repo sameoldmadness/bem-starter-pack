@@ -14,18 +14,19 @@ Choose one of the following options:
 
 <!-- TODO add link to archive on gh-pages -->
 
-1. [Download](https://github.com/veged/bem-starter-pack/archive/master.zip) the latest stable release.
+1. [Download](https://github.com/sameoldmadness/bem-starter-pack/archive/master.zip) the latest stable release.
 2. Clone the git repo — `git clone
-   https://github.com/veged/bem-starter-pack.git` - and checkout the [tagged
-   release](https://github.com/veged/bem-starter-pack/releases) you'd like to
+   https://github.com/sameoldmadness/bem-starter-pack.git` - and checkout the [tagged
+   release](https://github.com/sameoldmadness/bem-starter-pack/releases) you'd like to
    use.
 
+You can also play with [demo](http://codepen.io/sameoldmadness/pen/vEqeVB).
 
 ## Features
 
 * Powerfull js library for managing BEM blocks — [bem-components](https://ru.bem.info/libs/bem-components/)
 * Rich and fast BEM template engine — [BH](https://ru.bem.info/technology/bh)
-* Comprehensible "Gettting started" guide
+* Comprehensible "Getting started" guide
 
 
 ## [Browser support](https://github.com/bem/bem-core#supported-browsers)
@@ -39,7 +40,7 @@ Choose one of the following options:
 
 ## Documentation
 
-Take a look at the [documentation table of contents](doc/TOC.md). This
+Take a look at the [documentation table of contents](docs/TOC.md). This
 documentation is bundled with the project, which makes it readily available for
 offline reading and provides a useful starting point for any documentation you
 want to write about your project.
