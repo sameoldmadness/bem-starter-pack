@@ -1,5 +1,7 @@
 # bem-starter-pack
 
+[![Join the chat at https://gitter.im/sameoldmadness/bem-starter-pack](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sameoldmadness/bem-starter-pack?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <!-- TODO link to gh-pages -->
 
 <!-- TODO bages -->
