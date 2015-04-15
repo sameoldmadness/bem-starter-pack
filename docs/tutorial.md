@@ -72,51 +72,65 @@ BEM(
 
 Просто шаблонизатор по умолчанию преобразует блок и его элементы в тэги `div`.
 
-Укажем, какие именно тэги следует использовать для элементов `input` и `button`. Для этого создадим два шаблона:
+Укажем, какие именно тэги следует использовать для элементов `input` и `button`. Для этого укажем их в структуре элементов:
 
 ```js
-BEM.HTML.match("search__input", function (ctx) {
-    ctx.tag("input");
-});
-
-BEM.HTML.match("search__button", function (ctx) {
-    ctx.tag("button");
-});
+BEM(
+    BEM.DOM.append("body", BEM.HTML.apply({
+        "block": "search",
+        "content": [
+            {
+                "elem": "input",
+                "tag": "input"
+            },
+            {
+                "elem": "button",
+                "tag": "button"
+            }
+        ]
+    }));
+);
 ```
 
-Однако, наш блок нельзя назвать завершённым: полю ввода и кнопке на хватает надписей. Добавим их в уже имеющиеся шаблоны.
+Однако, наш блок нельзя назвать завершённым: полю ввода и кнопке на хватает надписей.
 
 Для поля ввода зададим атрибут `placeholder`:
 
 ```js
-ctx.attr("placeholder", "Введите текст поиска");
+{
+    "elem": "input",
+    "tag": "input",
+    "attrs" { "placeholder": "Введите текст поиска" }
+}
 ```
 
 Для кнопки заполним содержимое тэга:
 
 ```js
-ctx.content('Искать!');
+{
+    "elem": "button",
+    "tag": "button",
+    "content": "Искать!"
+}
 ```
 
 Файл `app.js` должен выглядеть примерно так:
 
 ```js
 BEM(
-    BEM.HTML.match("search__input", function (ctx) {
-        ctx.tag("input");
-        ctx.attr("placeholder", "Введите текст поиска");
-    });
-
-    BEM.HTML.match("search__button", function (ctx) {
-        ctx.tag("button");
-        ctx.content('Искать!');
-    });
-
     BEM.DOM.append("body", BEM.HTML.apply({
         "block": "search",
         "content": [
-            { "elem": "input" },
-            { "elem": "button" }
+            {
+                "elem": "input",
+                "tag": "input",
+                "attrs" { "placeholder": "Введите текст поиска" }
+            },
+            {
+                "elem": "button",
+                "tag": "button",
+                "content": "Искать!"
+            }
         ]
     }));
 );
