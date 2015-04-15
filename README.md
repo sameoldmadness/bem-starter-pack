@@ -1,8 +1,9 @@
-# bem-starter-pack
+# [BEM starter pack](https://sameoldmadness.github.io/bem-starter-pack/)
 
 [![Join the chat at https://gitter.im/sameoldmadness/bem-starter-pack](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sameoldmadness/bem-starter-pack?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-<!-- TODO link to gh-pages -->
+[![devDependency Status](https://david-dm.org/sameoldmadness/bem-starter-pack/dev-status.svg)](https://david-dm.org/sameoldmadness/bem-starter-pack#info=devDependencies)
+[![Stories in Ready](https://badge.waffle.io/sameoldmadness/bem-starter-pack.svg?label=ready&title=Ready)](http://waffle.io/sameoldmadness/bem-starter-pack)
+[![Build Status](https://travis-ci.org/sameoldmadness/bem-starter-pack.svg)](https://travis-ci.org/sameoldmadness/bem-starter-pack)
 
 <!-- TODO bages -->
 
