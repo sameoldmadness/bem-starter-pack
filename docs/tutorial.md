@@ -52,12 +52,12 @@ BEM.DOM.append("body", BEM.HTML.apply({
 
 Метод `BEM.HTML.apply` преобразует `json` (формат, в котором описана структура блока) в `html`, а метод `BEM.DOM.append` вставляет этот `html` внутрь тэга `body`.
 
-Чтобы этот код заработал, его нужно вставить в файл `app.js` внутрь конструкции `BEM( ... );`.
+Чтобы этот код заработал, его нужно вставить в файл `app.js` внутрь конструкции `BEM(function () { ... });`.
 
 Содержимое файла к этому моменту выглядит так:
 
 ```js
-BEM(
+BEM(function () {
     BEM.DOM.append("body", BEM.HTML.apply({
         "block": "search",
         "content": [
@@ -65,7 +65,7 @@ BEM(
             { "elem": "button" }
         ]
     }));
-);
+});
 ```
 
 Если мы откроем в браузере файл `index.html`, то ничего не увидим. В чём же дело?
@@ -75,7 +75,7 @@ BEM(
 Укажем, какие именно тэги следует использовать для элементов `input` и `button`. Для этого укажем их в структуре элементов:
 
 ```js
-BEM(
+BEM(function () {
     BEM.DOM.append("body", BEM.HTML.apply({
         "block": "search",
         "content": [
@@ -89,7 +89,7 @@ BEM(
             }
         ]
     }));
-);
+});
 ```
 
 Однако, наш блок нельзя назвать завершённым: полю ввода и кнопке на хватает надписей.
@@ -117,7 +117,7 @@ BEM(
 Файл `app.js` должен выглядеть примерно так:
 
 ```js
-BEM(
+BEM(function () {
     BEM.DOM.append("body", BEM.HTML.apply({
         "block": "search",
         "content": [
@@ -133,7 +133,7 @@ BEM(
             }
         ]
     }));
-);
+});
 ```
 
 Использование готовых блоков
@@ -176,7 +176,7 @@ BEM(
 Файл `app.js` теперь выглядит так:
 
 ```js
-BEM(
+BEM(function () {
     BEM.DOM.append("body", BEM.HTML.apply({
         "block": "search",
         "content": [
@@ -192,7 +192,7 @@ BEM(
             }
         ]
     }));
-);
+});
 ```
 
 Стили
@@ -280,7 +280,7 @@ input.on('change', function () {
 Итоговый вид файла `app.js`:
 
 ```js
-BEM(
+BEM(function () {
     BEM.DOM.decl('search', {
         onSetMod: {
             js: function () {
@@ -313,5 +313,5 @@ BEM(
             }
         ]
     }));
-);
+});
 ```
