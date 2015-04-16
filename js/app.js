@@ -1,5 +1,17 @@
 BEM(function () {
 
+BEM.HTML.match('github-ribbon', function (ctx) {
+    ctx.tag('a');
+    ctx.attr('href', ctx.param('url'));
+    ctx.content({
+        tag: 'img',
+        attrs: {
+            src: ctx.param('image'),
+            alt: ctx.param('alt') || 'Fork me on GitHub'
+        }
+    })
+});
+
 BEM.HTML.match('header', function (ctx) {
   ctx.tag('header');
   ctx.content([
@@ -122,6 +134,12 @@ BEM.HTML.match('technologies__preview', function (ctx) {
 });
 
 BEM.DOM.append('body', BEM.HTML.apply([
+  {
+    block: 'github-ribbon',
+    mods: { right: true },
+    url: 'https://github.com/sameoldmadness/bem-starter-pack',
+    image: 'https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png'
+  },
   {
     block: 'section',
     content: [

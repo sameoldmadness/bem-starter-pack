@@ -1,3 +1,23 @@
+.github-ribbon
+{
+    position: absolute;
+    top: 0;
+}
+
+.github-ribbon > .image {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.github-ribbon_left{
+  left: 0;
+}
+
+.github-ribbon_right{
+  right: 0;
+}
+
 .page
 {
   min-width: 1020px;
