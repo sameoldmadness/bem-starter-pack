@@ -1,17 +1,16 @@
-var fs = require('fs');
-var path = require('path');
+var fs = require('fs'),
+    path = require('path'),
+    gulp = require('gulp'),
 
-var gulp = require('gulp');
+    // Load all gulp plugins automatically
+    // and attach them to the `plugins` object
+    plugins = require('gulp-load-plugins')(),
 
-// Load all gulp plugins automatically
-// and attach them to the `plugins` object
-var plugins = require('gulp-load-plugins')();
+    // Temporary solution until gulp 4
+    // https://github.com/gulpjs/gulp/issues/355
+    runSequence = require('run-sequence'),
 
-// Temporary solution until gulp 4
-// https://github.com/gulpjs/gulp/issues/355
-var runSequence = require('run-sequence');
-
-var pkg = require('./package.json');
+    pkg = require('./package.json');
 
 gulp.task('archive:create_archive_dir', function () {
     fs.mkdirSync(path.resolve('archive'), '0755');
@@ -19,13 +18,13 @@ gulp.task('archive:create_archive_dir', function () {
 
 gulp.task('archive:zip', function (done) {
 
-    var archiveName = path.resolve('archive', pkg.name + '_v' + pkg.version + '.zip');
-    var archiver = require('archiver')('zip');
-    var files = require('glob').sync('**/*.*', {
-        cwd : 'dist',
-        dot : true // include hidden files
-    });
-    var output = fs.createWriteStream(archiveName);
+    var archiveName = path.resolve('archive', pkg.name + '_v' + pkg.version + '.zip'),
+        archiver = require('archiver')('zip'),
+        files = require('glob').sync('**/*.*', {
+            cwd : 'dist',
+            dot : true // include hidden files
+        }),
+        output = fs.createWriteStream(archiveName);
 
     archiver.on('error', function (error) {
         done();
@@ -35,7 +34,6 @@ gulp.task('archive:zip', function (done) {
     output.on('close', done);
 
     files.forEach(function (file) {
-
         var filePath = path.resolve('dist', file);
 
         // `archiver.bulk` does not maintain the file
@@ -44,7 +42,6 @@ gulp.task('archive:zip', function (done) {
             name : file,
             mode : fs.statSync(filePath)
         });
-
     });
 
     archiver.pipe(output);
@@ -83,7 +80,8 @@ gulp.task('copy:misc', function () {
 gulp.task('lint:js', function () {
     return gulp.src([
         'gulpfile.js',
-        'src/js/*.js'
+        'src/js/*.js',
+        'test/*.js'
     ]).pipe(plugins.jscs())
       .pipe(plugins.jshint())
       .pipe(plugins.jshint.reporter('jshint-stylish'))

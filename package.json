@@ -13,6 +13,7 @@
     "gulp-load-plugins": "^0.10.0",
     "gulp-rename": "^1.2.0",
     "gulp-replace": "^0.5.3",
+    "mocha": "^2.2.4",
     "jshint-stylish": "^1.0.1",
     "run-sequence": "^1.0.2"
   },
@@ -27,7 +28,8 @@
   "name": "bem-starter-pack",
   "private": true,
   "scripts": {
-    "build": "gulp build"
+    "build": "gulp build",
+    "test": "gulp archive && mocha --reporter spec --timeout 5000"
   },
   "version": "1.0.0"
 }
