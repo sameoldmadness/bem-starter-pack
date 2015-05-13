@@ -127,3 +127,9 @@
 .technologies__example + .technologies__example {
     margin-top: 1em;
 }
+
+.lang-switch {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}

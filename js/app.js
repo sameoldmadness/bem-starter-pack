@@ -1,5 +1,11 @@
 BEM(function () {
 
+var lang = (window.location.search
+    .slice(1).split('&')
+    .map(function (x) { return x.split('='); })
+    .filter(function (x) { return x[0] === 'lang'; })[0] || [])[1];
+var i18n = BEM.I18N(lang === 'ru' ? 'ru' : 'en');
+
 BEM.HTML.match('github-ribbon', function (ctx) {
     ctx.tag('a');
     ctx.attr('href', ctx.param('url'));
@@ -43,8 +49,8 @@ BEM.HTML.match('technologies', function (ctx) {
     ctx.content([
       {
         elem: 'item',
-        title: 'js-библиотека i-bem',
-        url: 'https://ru.bem.info/technology/i-bem/v2/i-bem-js/',
+        title: i18n('techBemLibTitle'),
+        url: i18n('techBemLibLink'),
         code:
           'BEM.DOM.decl(\'form\', {\n' +
           '  onSetMod: {\n' +
@@ -57,8 +63,8 @@ BEM.HTML.match('technologies', function (ctx) {
       },
       {
         elem: 'item',
-        title: 'шаблонизатор bh',
-        url: 'https://ru.bem.info/technology/bh/v4/about/',
+        title: i18n('techBhLibTitle'),
+        url: i18n('techBhLibLink'),
         code:
           'bh.match(\'button\', function(ctx) {\n' +
           '  ctx.tag(\'button\')\n' +
@@ -69,35 +75,35 @@ BEM.HTML.match('technologies', function (ctx) {
       },
       {
         elem: 'item',
-        title: 'библиотека блоков o2',
-        url: 'https://ru.bem.info/libs/bem-components/v2.1.0/',
+        title: i18n('techComponentsLibTitle'),
+        url: i18n('techComponentsLibLink'),
         examples: [
           {
             block : 'checkbox-group',
             mods : { theme : 'islands', size : 'm', type : 'button' },
             name : 'checkbox-button',
             options : [
-                { val : 1, text : 'Блок' },
-                { val : 2, text : 'Элемент' },
-                { val : 3, text : 'Модификатор' }
+                { val : 1, text : i18n('techComponentsLibCheckbox1') },
+                { val : 2, text : i18n('techComponentsLibCheckbox2') },
+                { val : 3, text : i18n('techComponentsLibCheckbox3') }
             ]
           },
           {
               block : 'attach',
               mods : { theme : 'islands', size : 'm' },
-              button : 'Выберите файл',
-              noFileText : 'Файл не выбран'
+              button : i18n('techComponentsLibAttach1'),
+              noFileText : i18n('techComponentsLibAttach2')
           },
           {
               block : 'select',
               mods : { mode : 'check', theme : 'islands', size : 'm' },
               name : 'select1',
               val : [2, 3],
-              text : 'Программа конференции',
+              text : i18n('techComponentsLibSelect'),
               options : [
-                  { val : 1, text : 'Доклад' },
-                  { val : 2, text : 'Мастер-класс' },
-                  { val : 3, text : 'Круглый стол' }
+                  { val : 1, text : i18n('techComponentsLibSelect1') },
+                  { val : 2, text : i18n('techComponentsLibSelect2') },
+                  { val : 3, text : i18n('techComponentsLibSelect3') }
               ]
           }
         ]
@@ -133,7 +139,18 @@ BEM.HTML.match('technologies__preview', function (ctx) {
   }));
 });
 
+BEM.HTML.match('lang-switch', function (ctx) {
+  ctx.content({
+    block: 'link',
+    url: i18n('langSwitchUrl'),
+    content: i18n('langSwitchContent')
+  });
+});
+
 BEM.DOM.append('body', BEM.HTML.apply([
+  {
+    block: 'lang-switch'
+  },
   {
     block: 'github-ribbon',
     mods: { right: true },
@@ -145,8 +162,8 @@ BEM.DOM.append('body', BEM.HTML.apply([
     content: [
       {
         block: 'header',
-        title: 'BEM starter pack',
-        subtitle: 'Шаблон для мгновеного старта на полном БЭМ-стеке'
+        title: i18n('pageTitle'),
+        subtitle: i18n('pageSubtitle')
       }
     ]
   },
@@ -156,23 +173,15 @@ BEM.DOM.append('body', BEM.HTML.apply([
     content: [
       {
         elem: 'title',
-        content: 'А что такое БЭМ?'
+        content: i18n('whatIsBemTitle')
       },
       {
         elem: 'description',
-        content: 'БЭМ — методология разработки, а также набор инструментов, упрощающий эту самую разработку.'
+        content: i18n('whatIsBemDescription')
       },
       {
         elem: 'description',
-        content: [
-          'Для начала будет полезно узнать, ',
-          { block: 'link', mods: { theme: 'islands' }, content: 'что', url: 'https://ru.bem.info/method/definitions/' },
-          ' такое БЭМ и ',
-          { block: 'link', mods: { theme: 'islands' }, content: 'зачем', url: 'https://ru.bem.info/method/' },
-          ' он нужен.<br>А затем — сразу к ',
-          { block: 'link', mods: { theme: 'islands' }, content: 'туториалу', url: 'https://github.com/sameoldmadness/bem-starter-pack/blob/master/docs/tutorial.md' },
-          ', создавать свой собственный блок.'
-        ]
+        content: i18n('whatIsBemDescription2')
       },
     ]
   },
@@ -182,7 +191,7 @@ BEM.DOM.append('body', BEM.HTML.apply([
     content: [
       {
         elem: 'title',
-        content: 'Как начать?'
+        content: i18n('howToStartTitle')
       },
       {
         block: 'steps',
@@ -196,15 +205,15 @@ BEM.DOM.append('body', BEM.HTML.apply([
               view: 'action'
             },
             url: 'https://github.com/sameoldmadness/bem-starter-pack/releases/download/1.0.0/bem-starter-pack_v1.0.0.zip',
-            text: 'Скачать архив'
+            text: i18n('howToStartStep1')
           },
-          'Распаковать',
-          'Открыть в браузере'
+          i18n('howToStartStep2'),
+          i18n('howToStartStep3')
         ]
       },
       {
         elem: 'postscriptum',
-        content: 'А можно просто поиграться в онлайн-редакторе'
+        content: i18n('howToStartPS')
       }
     ]
   },
@@ -224,7 +233,7 @@ BEM.DOM.append('body', BEM.HTML.apply([
     content: [
       {
         elem: 'title',
-        content: 'Что под капотом?'
+        content: i18n('techTitle'),
       },
       {
         block: 'technologies'
@@ -237,35 +246,15 @@ BEM.DOM.append('body', BEM.HTML.apply([
     content: [
       {
         elem: 'title',
-        content: 'И что же дальше?'
+        content: i18n('whatNextTitle')
       },
       {
         elem: 'description',
-        content: [
-          'Тем, кто хочет стать настоящим БЕМ-ниндзей, стоит изучить ',
-          { block: 'link', mods: { theme: 'islands' }, content: 'шаблонизатор', url: 'https://ru.bem.info/technology/bh/v4/about/' },
-          ', ',
-          { block: 'link', mods: { theme: 'islands' }, content: 'js-библиотеку', url: 'https://ru.bem.info/technology/i-bem/v2/i-bem-js/' },
-          ' и <br>',
-          { block: 'link', mods: { theme: 'islands' }, content: 'библиотеку блоков', url: 'https://ru.bem.info/libs/bem-components/v2.1.0/' },
-          '. Затем можно посмотреть на ',
-          { block: 'link', mods: { theme: 'islands' }, content: 'систему сборки', url: 'https://ru.bem.info/tools/bem/enb-bem-examples/' },
-          ' и ',
-          { block: 'link', mods: { theme: 'islands' }, content: 'загрузчик модулей', url: 'https://ru.bem.info/tools/bem/modules/' },
-          '.'
-        ]
+        content: i18n('whatNextDescription')
       },
       {
         elem: 'description',
-        content: [
-          'Если же первоочередная задача — развернуть приложение на БЭМ-стеке,<br>вот вам ',
-          { block: 'link', mods: { theme: 'islands' }, content: 'репозиторий', url: 'https://github.com/bem/project-stub' },
-          ' и ',
-          { block: 'link', mods: { theme: 'islands' }, content: 'статья', url: 'https://ru.bem.info/tutorials/project-stub/' },
-          ' про него. Даже ',
-          { block: 'link', mods: { theme: 'islands' }, content: 'yeoman-генератор', url: 'https://ru.bem.info/tools/bem/bem-stub/' },
-          ' есть : )'
-        ]
+        content: i18n('whatNextDescription2')
       }
     ]
   }
