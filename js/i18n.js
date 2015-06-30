@@ -37,7 +37,7 @@ BEM(function () {
             howToStartStep3: 'Открыть в браузере',
             howToStartPS: 'А можно просто поиграться в онлайн-редакторе',
             whatNextTitle: 'И что же дальше?',
-            whatNextDescription: 'Тем, кто хочет стать настоящим БЕМ-ниндзей, стоит изучить ' + link('шаблонизатор', 'https://ru.bem.info/technology/bh/v4/about/') + ', ' + link('js-библиотеку', 'https://ru.bem.info/technology/i-bem/v2/i-bem-js/') + ' и <br>' + link('библиотеку блоков', 'https://ru.bem.info/libs/bem-components/v2.1.0/') + '. Затем можно посмотреть на ' + link('систему сборки', 'https://ru.bem.info/tools/bem/enb-bem-examples/') + ' и ' + link('загрузчик модулей', 'https://ru.bem.info/tools/bem/modules/') + '.',
+            whatNextDescription: 'Тем, кто хочет стать настоящим БЭМ-ниндзей, стоит изучить ' + link('шаблонизатор', 'https://ru.bem.info/technology/bh/v4/about/') + ', ' + link('js-библиотеку', 'https://ru.bem.info/technology/i-bem/v2/i-bem-js/') + ' и <br>' + link('библиотеку блоков', 'https://ru.bem.info/libs/bem-components/v2.1.0/') + '. Затем можно посмотреть на ' + link('систему сборки', 'https://ru.bem.info/tools/bem/enb-bem-examples/') + ' и ' + link('загрузчик модулей', 'https://ru.bem.info/tools/bem/modules/') + '.',
             whatNextDescription2: 'Если же первоочередная задача — развернуть приложение на БЭМ-стеке,<br>вот вам ' + link('репозиторий', 'https://github.com/bem/project-stub') + ' и ' + link('статья', 'https://ru.bem.info/tutorials/project-stub/') + ' про него. Даже ' + link('yeoman-генератор', 'https://ru.bem.info/tools/bem/bem-stub/') + ' есть : )',
             langSwitchUrl: './index.html',
             langSwitchContent: 'English please'
